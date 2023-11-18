@@ -12,12 +12,13 @@ Copyright (c) 2017-2024 Obsidian Developers
 What is Obsidian?
 ----------------
 
-Obsidian is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
- - 1.5 minute block targets
+Obsidian is a lite version of litecoin using the same scrypt as a proof-of-work algorithm.
+ - 1.5 minute block targets (Litecoin is 2.5 minutes )
  - subsidy halves in 840k blocks (~4 years)
- - ~100 million total coins
+ - ~100 million total coins (Litecoin is 84 million total coins)
+ - 21 Block confirmations to spend mined coins (Litecoin is 120 blocks confirmed before you can spend mined coins)
 
-The rest is the same as Bitcoin.
+The rest is the same as Bitcoin / litecoin.
  - 50 coins per block
  - 2016 blocks to retarget difficulty
 
