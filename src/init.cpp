@@ -1280,14 +1280,12 @@ bool AppInitMain(InitInterfaces& interfaces)
                                     "deprecatedrpc=accounts\n"
                                     "\n"
                                     "# Addnodes:\n"
-                                    "addnode=78.141.237.229:2333\n"
-                                    "addnode=82.33.128.177:2333\n"
+                                    "addnode=64.176.214.8:2333\n"
+                                    "addnode=207.246.125.57:2333\n"
                                     "addnode=45.77.153.55:2333\n"
                                     "addnode=108.61.149.178:2333\n"
                                     "addnode=207.246.94.88:2333\n"
                                     "addnode=64.176.210.152:2333\n"
-                                    "addnode=seed01.obsidiancoin.org\n"
-                                    "addnode=seed02.obsidiancoin.org\n"
                                     "\n";
             fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);
