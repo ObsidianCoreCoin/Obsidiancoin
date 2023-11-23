@@ -2,7 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file. See the AUTHORS file for names of contributors.
 
-#ifndef STORAGE_LEVELDB_PORT_THREAD_ANNOTATIONS_H
+#ifndef STORAGE_LEVELDB_PORT_THREAD_ANNOTATIONS_H_
+#define STORAGE_LEVELDB_PORT_THREAD_ANNOTATIONS_H_
 
 // Some environments provide custom macros to aid in static thread-safety
 // analysis.  Provide empty definitions of such macros unless they are already
@@ -32,28 +33,28 @@
 #define SCOPED_LOCKABLE
 #endif
 
-#ifndef EXCLUSIVE_LOCK_OBSCTION
-#define EXCLUSIVE_LOCK_OBSCTION(...)
+#ifndef EXCLUSIVE_LOCK_FUNCTION
+#define EXCLUSIVE_LOCK_FUNCTION(...)
 #endif
 
-#ifndef SHARED_LOCK_OBSCTION
-#define SHARED_LOCK_OBSCTION(...)
+#ifndef SHARED_LOCK_FUNCTION
+#define SHARED_LOCK_FUNCTION(...)
 #endif
 
-#ifndef EXCLUSIVE_TRYLOCK_OBSCTION
-#define EXCLUSIVE_TRYLOCK_OBSCTION(...)
+#ifndef EXCLUSIVE_TRYLOCK_FUNCTION
+#define EXCLUSIVE_TRYLOCK_FUNCTION(...)
 #endif
 
-#ifndef SHARED_TRYLOCK_OBSCTION
-#define SHARED_TRYLOCK_OBSCTION(...)
+#ifndef SHARED_TRYLOCK_FUNCTION
+#define SHARED_TRYLOCK_FUNCTION(...)
 #endif
 
-#ifndef UNLOCK_OBSCTION
-#define UNLOCK_OBSCTION(...)
+#ifndef UNLOCK_FUNCTION
+#define UNLOCK_FUNCTION(...)
 #endif
 
 #ifndef NO_THREAD_SAFETY_ANALYSIS
 #define NO_THREAD_SAFETY_ANALYSIS
 #endif
 
-#endif  // STORAGE_LEVELDB_PORT_THREAD_ANNOTATIONS_H
+#endif  // STORAGE_LEVELDB_PORT_THREAD_ANNOTATIONS_H_

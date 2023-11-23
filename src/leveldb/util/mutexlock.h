@@ -22,11 +22,11 @@ namespace leveldb {
 
 class SCOPED_LOCKABLE MutexLock {
  public:
-  explicit MutexLock(port::Mutex *mu) EXCLUSIVE_LOCK_OBSCTION(mu)
+  explicit MutexLock(port::Mutex *mu) EXCLUSIVE_LOCK_FUNCTION(mu)
       : mu_(mu)  {
     this->mu_->Lock();
   }
-  ~MutexLock() UNLOCK_OBSCTION() { this->mu_->Unlock(); }
+  ~MutexLock() UNLOCK_FUNCTION() { this->mu_->Unlock(); }
 
  private:
   port::Mutex *const mu_;

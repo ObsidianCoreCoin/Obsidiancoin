@@ -3,11 +3,11 @@ Obsidian integration/staging tree
 
 http://www.obsidiancoin.org
 
-Copyright (c) 2009-2024 Bitcoin Developers
+Copyright (c) 2009-2020 Bitcoin Developers
 
-Copyright (c) 2011-2024 Litecoin Developers
+Copyright (c) 2011-2020 Litecoin Developers
 
-Copyright (c) 2017-2024 Obsidian Developers
+Copyright (c) 2016-2023 Obsidian Developers
 
 What is Obsidian?
 ----------------
