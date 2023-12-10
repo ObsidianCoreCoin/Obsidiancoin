@@ -5,7 +5,22 @@
 Specifications:
 ==================
 
-
+- name: Obsidian Network
+- ticker: OBN
+- type: PoW
+- maturity: 41
+- max supply: 168,000,000
+- p2p port: 2333
+- rpc port: 2332
+- halving: 840,000
+- block time: 72 seconds
+- diff time: 8,400 blocks
+- block reward: 100
+- pre-mine: 0
+- blocks: 28,560,000
+- days: 23,800
+- years: ~65.21
+- algo: SCRYPT
 
 ---
 
