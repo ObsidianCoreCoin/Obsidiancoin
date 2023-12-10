@@ -109,10 +109,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1700773000;
 
         // The best chain should have at least this much work.
-        //consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000097009700");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000001280916eb5c29ab");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x92ff2434f6a10fa3e42cd8cee22e38a7cb6c06440bfbac72267bba6c8173ddd8");
+        consensus.defaultAssumeValid = uint256S("0xbebc9d7669a3223d39cb6c149fb2ab0c0111b33cedf55af22d5daffbb350a9fc");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -139,6 +139,7 @@ public:
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
+       
         vSeeds.emplace_back("64.176.214.8");
         vSeeds.emplace_back("207.246.125.57");
         vSeeds.emplace_back("45.77.153.55");
@@ -175,14 +176,20 @@ public:
                 { 2160, uint256S("0xfd34917be33e79ad6d80cbdf494d15c8f4e3a1d182ea14f5f0dd0bd9cf4c22dc")}, // Softfork CSV and Segwit status locked_in
                 { 2400, uint256S("0xa33f33d5f6770da72262f5855ac1761555d183b80b76724e21567a3ec2a86b17")}, // Softfork CSV and Segwit activated
                 { 2415, uint256S("0x92ff2434f6a10fa3e42cd8cee22e38a7cb6c06440bfbac72267bba6c8173ddd8")},
+                { 9528, uint256S("0xedeae39bfb42d5b644428de1052c549b40024b9888bcf9e6cfb0dcd0cfac4a44")},
+                { 12224, uint256S("0xb5996ce08731440249caa06e7cf9e9a04028a547d9ef434491a0c7fa0bd0ded7")},
+                { 28031, uint256S("0x48f75ff9740595f81caa9f759565a45c0166bdfb891a02dced2d093e117ca4ab")},
+                { 55256, uint256S("0x5d6a349985df19c40352a87a12fde3955c77036182adf5cac96b7a50e9f52e11")},
+                { 83892, uint256S("0x56346ec538145357f158a4ebf6aa73d0d254ddb81863f744c374c934ee52664f")},
+                { 118408, uint256S("0xbebc9d7669a3223d39cb6c149fb2ab0c0111b33cedf55af22d5daffbb350a9fc")},         
             }
         };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 2415
-            /* nTime    */ 1700684723,
-            /* nTxCount */ 2436,
-            /* dTxRate  */ 0.01224853
+            /* nTime    */ 1702226476,
+            /* nTxCount */ 123585,
+            /* dTxRate  */ 0.07096484
         };
 
         /* disable fallback fee on mainnet */
