@@ -35,7 +35,7 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/obsidian-project/gitian.sigs.obs.git
+    git clone https://github.com/obsidian-project/gitian.sigs.obn.git
     git clone https://github.com/ObsidianCoreCoin/obsidiancoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     git clone https://github.com/ObsidianCoreCoin/obsidiancoin.git
@@ -70,9 +70,9 @@ Setup Gitian descriptors:
     git checkout v${VERSION}
     popd
 
-Ensure your gitian.sigs.obs are up-to-date if you wish to gverify your builds against other Gitian signatures.
+Ensure your gitian.sigs.obn are up-to-date if you wish to gverify your builds against other Gitian signatures.
 
-    pushd ./gitian.sigs.obs
+    pushd ./gitian.sigs.obn
     git pull
     popd
 
@@ -121,16 +121,16 @@ The gbuild invocations below <b>DO NOT DO THIS</b> by default.
     
     pushd ./gitian-builder
     ./bin/gbuild --num-make $GITIAN_THREADS --memory $GITIAN_MEMORY --commit obsidian=v${VERSION} ../obsidian/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs.obs/ ../obsidian/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs.obn/ ../obsidian/contrib/gitian-descriptors/gitian-linux.yml
     mv build/out/obsidian-*.tar.gz build/out/src/obsidian-*.tar.gz ../
 
     ./bin/gbuild --num-make $GITIAN_THREADS --memory $GITIAN_MEMORY --commit obsidian=v${VERSION} ../obsidian/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs.obs/ ../obsidian/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs.obn/ ../obsidian/contrib/gitian-descriptors/gitian-win.yml
     mv build/out/obsidian-*-win-unsigned.tar.gz inputs/obsidian-win-unsigned.tar.gz
     mv build/out/obsidian-*.zip build/out/obsidian-*.exe ../
 
     ./bin/gbuild --num-make $GITIAN_THREADS --memory $GITIAN_MEMORY --commit obsidian=v${VERSION} ../obsidian/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.obs/ ../obsidian/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.obn/ ../obsidian/contrib/gitian-descriptors/gitian-osx.yml
     mv build/out/obsidian-*-osx-unsigned.tar.gz inputs/obsidian-osx-unsigned.tar.gz
     mv build/out/obsidian-*.tar.gz build/out/obsidian-*.dmg ../
     popd
@@ -141,7 +141,7 @@ Build output expected:
   2. linux 32-bit and 64-bit dist tarballs (`obsidian-${VERSION}-linux[32|64].tar.gz`)
   3. windows 32-bit and 64-bit unsigned installers and dist zips (`obsidian-${VERSION}-win[32|64]-setup-unsigned.exe`, `obsidian-${VERSION}-win[32|64].zip`)
   4. macOS unsigned installer and dist tarball (`obsidian-${VERSION}-osx-unsigned.dmg`, `obsidian-${VERSION}-osx64.tar.gz`)
-  5. Gitian signatures (in `gitian.sigs.obs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
+  5. Gitian signatures (in `gitian.sigs.obn/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
@@ -150,16 +150,16 @@ Add other gitian builders keys to your gpg keyring, and/or refresh keys: See `..
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs.obs/ -r ${VERSION}-linux ../obsidian/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs.obs/ -r ${VERSION}-win-unsigned ../obsidian/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs.obs/ -r ${VERSION}-osx-unsigned ../obsidian/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs.obn/ -r ${VERSION}-linux ../obsidian/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs.obn/ -r ${VERSION}-win-unsigned ../obsidian/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs.obn/ -r ${VERSION}-osx-unsigned ../obsidian/contrib/gitian-descriptors/gitian-osx.yml
     popd
 
 ### Next steps:
 
-Commit your signature to gitian.sigs.obs:
+Commit your signature to gitian.sigs.obn:
 
-    pushd gitian.sigs.obs
+    pushd gitian.sigs.obn
     git add ${VERSION}-linux/"${SIGNER}"
     git add ${VERSION}-win-unsigned/"${SIGNER}"
     git add ${VERSION}-osx-unsigned/"${SIGNER}"
@@ -207,8 +207,8 @@ Create (and optionally verify) the signed macOS binary:
 
     pushd ./gitian-builder
     ./bin/gbuild -i --commit signature=v${VERSION} ../obsidian/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs.obs/ ../obsidian/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs.obs/ -r ${VERSION}-osx-signed ../obsidian/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs.obn/ ../obsidian/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs.obn/ -r ${VERSION}-osx-signed ../obsidian/contrib/gitian-descriptors/gitian-osx-signer.yml
     mv build/out/obsidian-osx-signed.dmg ../obsidian-${VERSION}-osx.dmg
     popd
 
@@ -216,19 +216,19 @@ Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
     ./bin/gbuild -i --commit signature=v${VERSION} ../obsidian/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs.obs/ ../obsidian/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs.obs/ -r ${VERSION}-win-signed ../obsidian/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs.obn/ ../obsidian/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs.obn/ -r ${VERSION}-win-signed ../obsidian/contrib/gitian-descriptors/gitian-win-signer.yml
     mv build/out/obsidian-*win64-setup.exe ../obsidian-${VERSION}-win64-setup.exe
     mv build/out/obsidian-*win32-setup.exe ../obsidian-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed macOS/Windows binaries:
 
-    pushd gitian.sigs.obs
+    pushd gitian.sigs.obn
     git add ${VERSION}-osx-signed/"${SIGNER}"
     git add ${VERSION}-win-signed/"${SIGNER}"
     git commit -a
-    git push  # Assuming you can push to the gitian.sigs.obs tree
+    git push  # Assuming you can push to the gitian.sigs.obn tree
     popd
 
 ### After 3 or more people have gitian-built and their results match:

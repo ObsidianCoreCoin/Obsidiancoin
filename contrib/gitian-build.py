@@ -22,8 +22,8 @@ def setup():
     else:
         programs += ['lxc', 'debootstrap']
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
-    if not os.path.isdir('gitian.sigs.obs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/obsidian-project/gitian.sigs.obs.git'])
+    if not os.path.isdir('gitian.sigs.obn'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/obsidian-project/gitian.sigs.obn.git'])
     if not os.path.isdir('obsidian-detached-sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/ObsidianCoreCoin/obsidiancoin-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
@@ -60,20 +60,20 @@ def build():
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'obsidian='+args.commit, '--url', 'obsidian='+args.url, '../obsidian/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs.obs/', '../obsidian/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs.obn/', '../obsidian/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call('mv build/out/obsidian-*.tar.gz build/out/src/obsidian-*.tar.gz ../obsidian-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'obsidian='+args.commit, '--url', 'obsidian='+args.url, '../obsidian/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs.obs/', '../obsidian/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs.obn/', '../obsidian/contrib/gitian-descriptors/gitian-win.yml'])
         subprocess.check_call('mv build/out/obsidian-*-win-unsigned.tar.gz inputs/', shell=True)
         subprocess.check_call('mv build/out/obsidian-*.zip build/out/obsidian-*.exe ../obsidian-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'obsidian='+args.commit, '--url', 'obsidian='+args.url, '../obsidian/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs.obs/', '../obsidian/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs.obn/', '../obsidian/contrib/gitian-descriptors/gitian-osx.yml'])
         subprocess.check_call('mv build/out/obsidian-*-osx-unsigned.tar.gz inputs/', shell=True)
         subprocess.check_call('mv build/out/obsidian-*.tar.gz build/out/obsidian-*.dmg ../obsidian-binaries/'+args.version, shell=True)
 
@@ -81,7 +81,7 @@ def build():
 
     if args.commit_files:
         print('\nCommitting '+args.version+' Unsigned Sigs\n')
-        os.chdir('gitian.sigs.obs')
+        os.chdir('gitian.sigs.obn')
         subprocess.check_call(['git', 'add', args.version+'-linux/'+args.signer])
         subprocess.check_call(['git', 'add', args.version+'-win-unsigned/'+args.signer])
         subprocess.check_call(['git', 'add', args.version+'-osx-unsigned/'+args.signer])
@@ -96,7 +96,7 @@ def sign():
         print('\nSigning ' + args.version + ' Windows')
         subprocess.check_call('cp inputs/obsidian-' + args.version + '-win-unsigned.tar.gz inputs/obsidian-win-unsigned.tar.gz', shell=True)
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../obsidian/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs.obs/', '../obsidian/contrib/gitian-descriptors/gitian-win-signer.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs.obn/', '../obsidian/contrib/gitian-descriptors/gitian-win-signer.yml'])
         subprocess.check_call('mv build/out/obsidian-*win64-setup.exe ../obsidian-binaries/'+args.version, shell=True)
         subprocess.check_call('mv build/out/obsidian-*win32-setup.exe ../obsidian-binaries/'+args.version, shell=True)
 
@@ -104,14 +104,14 @@ def sign():
         print('\nSigning ' + args.version + ' MacOS')
         subprocess.check_call('cp inputs/obsidian-' + args.version + '-osx-unsigned.tar.gz inputs/obsidian-osx-unsigned.tar.gz', shell=True)
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../obsidian/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs.obs/', '../obsidian/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs.obn/', '../obsidian/contrib/gitian-descriptors/gitian-osx-signer.yml'])
         subprocess.check_call('mv build/out/obsidian-osx-signed.dmg ../obsidian-binaries/'+args.version+'/obsidian-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 
     if args.commit_files:
         print('\nCommitting '+args.version+' Signed Sigs\n')
-        os.chdir('gitian.sigs.obs')
+        os.chdir('gitian.sigs.obn')
         subprocess.check_call(['git', 'add', args.version+'-win-signed/'+args.signer])
         subprocess.check_call(['git', 'add', args.version+'-osx-signed/'+args.signer])
         subprocess.check_call(['git', 'commit', '-a', '-m', 'Add '+args.version+' signed binary sigs for '+args.signer])
@@ -122,15 +122,15 @@ def verify():
     os.chdir('gitian-builder')
 
     print('\nVerifying v'+args.version+' Linux\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.obs/', '-r', args.version+'-linux', '../obsidian/contrib/gitian-descriptors/gitian-linux.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.obn/', '-r', args.version+'-linux', '../obsidian/contrib/gitian-descriptors/gitian-linux.yml'])
     print('\nVerifying v'+args.version+' Windows\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.obs/', '-r', args.version+'-win-unsigned', '../obsidian/contrib/gitian-descriptors/gitian-win.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.obn/', '-r', args.version+'-win-unsigned', '../obsidian/contrib/gitian-descriptors/gitian-win.yml'])
     print('\nVerifying v'+args.version+' MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.obs/', '-r', args.version+'-osx-unsigned', '../obsidian/contrib/gitian-descriptors/gitian-osx.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.obn/', '-r', args.version+'-osx-unsigned', '../obsidian/contrib/gitian-descriptors/gitian-osx.yml'])
     print('\nVerifying v'+args.version+' Signed Windows\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.obs/', '-r', args.version+'-win-signed', '../obsidian/contrib/gitian-descriptors/gitian-win-signer.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.obn/', '-r', args.version+'-win-signed', '../obsidian/contrib/gitian-descriptors/gitian-win-signer.yml'])
     print('\nVerifying v'+args.version+' Signed MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.obs/', '-r', args.version+'-osx-signed', '../obsidian/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.obn/', '-r', args.version+'-osx-signed', '../obsidian/contrib/gitian-descriptors/gitian-osx-signer.yml'])
 
     os.chdir(workdir)
 

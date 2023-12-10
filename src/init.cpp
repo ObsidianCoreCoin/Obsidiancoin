@@ -1264,7 +1264,7 @@ bool AppInitMain(InitInterfaces& interfaces)
 
         FILE* configFile = fopen(GetConfigFile(gArgs.GetArg("-conf", BITCOIN_CONF_FILENAME)).string().c_str(), "a");
         if (configFile != NULL) {
-            std::string strHeader = "# Obsidian(OBS) config file:\n"
+            std::string strHeader = "# Obsidian(OBN) config file:\n"
                                     "rpcuser=username\n"
                                     "rpcpassword=password\n"
                                     "server=1\n"
