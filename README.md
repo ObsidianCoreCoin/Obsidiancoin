@@ -7,7 +7,7 @@ Copyright (c) 2009-2020 Bitcoin Developers
 
 Copyright (c) 2011-2020 Litecoin Developers
 
-Copyright (c) 2016-2023 Obsidian Developers
+Copyright (c) 2023-2024 Obsidian Developers
 
 What is Obsidian?
 ----------------
