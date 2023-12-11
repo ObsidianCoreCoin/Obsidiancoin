@@ -1,4 +1,4 @@
-﻿<img width="1100" src="https://obsidiancoin.org/assets/img/07/1024.png">
+﻿<img width="1100" src="https://obsidiancoin.org/assets/img/07/2048.png">
 
 
 
