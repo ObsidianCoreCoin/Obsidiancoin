@@ -4195,8 +4195,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="-170"/>
-        <source>Obsidian Core</source>
-        <translation type="unfinished">Obsidian Core</translation>
+        <source>Obsidian Network</source>
+        <translation type="unfinished">Obsidian Network</translation>
     </message>
     <message>
         <location line="+1"/>

@@ -577,7 +577,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Obsidian Core</source>
+        <source>Obsidian Network</source>
         <translation>Биткоин Core</translation>
     </message>
     <message>

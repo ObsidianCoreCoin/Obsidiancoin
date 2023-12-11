@@ -2870,8 +2870,8 @@ Kérem a kulcsmondatban használjon &lt;b&gt; tíz vagy több véletlenszerű ka
         <translation>HTTP szerver indítása sikertelen. A részleteket lásd: debug log.</translation>
     </message>
     <message>
-        <source>Obsidian Core</source>
-        <translation>Obsidian Core</translation>
+        <source>Obsidian Network</source>
+        <translation>Obsidian Network</translation>
     </message>
     <message>
         <source>The %s developers</source>

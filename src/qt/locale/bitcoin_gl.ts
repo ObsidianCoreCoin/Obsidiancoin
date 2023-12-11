@@ -999,7 +999,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Obsidian Core</source>
+        <source>Obsidian Network</source>
         <translation>Core de Obsidian</translation>
     </message>
     <message>

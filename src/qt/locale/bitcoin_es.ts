@@ -3250,8 +3250,8 @@ Nota: Dado que la comisión se calcula por byte, una comisión de "100 satoshis 
         <translation>No se ha podido comenzar el servidor HTTP. Ver debug log para detalles.</translation>
     </message>
     <message>
-        <source>Obsidian Core</source>
-        <translation>Obsidian Core</translation>
+        <source>Obsidian Network</source>
+        <translation>Obsidian Network</translation>
     </message>
     <message>
         <source>The %s developers</source>

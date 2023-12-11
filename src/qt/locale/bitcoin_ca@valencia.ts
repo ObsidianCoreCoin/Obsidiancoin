@@ -2441,8 +2441,8 @@
         <translation>S'està podant l'emmagatzemament de blocs...</translation>
     </message>
     <message>
-        <source>Obsidian Core</source>
-        <translation>Obsidian Core</translation>
+        <source>Obsidian Network</source>
+        <translation>Obsidian Network</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>

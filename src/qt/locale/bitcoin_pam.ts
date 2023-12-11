@@ -735,7 +735,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Obsidian Core</source>
+        <source>Obsidian Network</source>
         <translation>Kapilubluban ning Obsidian</translation>
     </message>
     <message>

@@ -3059,8 +3059,8 @@ Nota: Com que la comissió es calcula en funció dels bytes, una comissió de "1
         <translation>No s'ha pogut iniciar el servidor HTTP. Vegeu debug.log per a més detalls.</translation>
     </message>
     <message>
-        <source>Obsidian Core</source>
-        <translation>Obsidian Core</translation>
+        <source>Obsidian Network</source>
+        <translation>Obsidian Network</translation>
     </message>
     <message>
         <source>The %s developers</source>

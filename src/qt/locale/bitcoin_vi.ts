@@ -3025,8 +3025,8 @@
         <translation>Unable to start HTTP server. See debug log for details.</translation>
     </message>
     <message>
-        <source>Obsidian Core</source>
-        <translation>Obsidian Core</translation>
+        <source>Obsidian Network</source>
+        <translation>Obsidian Network</translation>
     </message>
     <message>
         <source>The %s developers</source>

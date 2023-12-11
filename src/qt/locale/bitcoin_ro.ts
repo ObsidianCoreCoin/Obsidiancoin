@@ -1271,8 +1271,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Obsidian Core</source>
-        <translation>Obsidian Core</translation>
+        <source>Obsidian Network</source>
+        <translation>Obsidian Network</translation>
     </message>
     <message>
         <source>Upgrading UTXO database</source>

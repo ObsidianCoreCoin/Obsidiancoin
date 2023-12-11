@@ -2039,7 +2039,7 @@ word die fooi eweredig verdeel.</translation>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Obsidian Core</source>
+        <source>Obsidian Network</source>
         <translation>Obsidian Kern</translation>
     </message>
     <message>

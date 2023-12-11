@@ -2955,7 +2955,7 @@
         <translation>غير قادر على بدء خادم ال HTTP. راجع سجل تصحيح الأخطاء للحصول على التفاصيل.</translation>
     </message>
     <message>
-        <source>Obsidian Core</source>
+        <source>Obsidian Network</source>
         <translation>جوهر Obsidian</translation>
     </message>
     <message>

@@ -3127,8 +3127,8 @@ Zapamätajte si: Keďže cena poplatku je počítaná za bajt, tak poplatok o ho
         <translation>Nebolo možné spustiť HTTP server. Pozrite si debug log pre viac informácií.</translation>
     </message>
     <message>
-        <source>Obsidian Core</source>
-        <translation>Obsidian Core</translation>
+        <source>Obsidian Network</source>
+        <translation>Obsidian Network</translation>
     </message>
     <message>
         <source>The %s developers</source>

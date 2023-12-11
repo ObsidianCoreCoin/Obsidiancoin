@@ -1,15 +1,15 @@
-Obsidian Core
+Obsidian Network
 =============
 
 Setup
 ---------------------
-Obsidian Core is the original Obsidian client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Obsidian transactions, which requires approximately 22 gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+Obsidian Network is the original Obsidian client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Obsidian transactions, which requires approximately 22 gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Obsidian Core, visit [obsidiancoin.org](https://obsidiancoin.org/).
+To download Obsidian Network, visit [obsidiancoin.org](https://obsidiancoin.org/).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Obsidian Core on your native platform.
+The following are some helpful notes on how to run Obsidian Network on your native platform.
 
 ### Unix
 
@@ -24,7 +24,7 @@ Unpack the files into a directory, and then run obsidian-qt.exe.
 
 ### macOS
 
-Drag Obsidian Core to your applications folder, and then run Obsidian Core.
+Drag Obsidian Network to your applications folder, and then run Obsidian Network.
 
 ### Need Help?
 
@@ -35,7 +35,7 @@ for help and more information.
 
 Building
 ---------------------
-The following are developer notes on how to build Obsidian Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Obsidian Network on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [macOS Build Notes](build-osx.md)

@@ -391,7 +391,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Obsidian Core</source>
+        <source>Obsidian Network</source>
         <translation>బిట్కోయిన్ కోర్</translation>
     </message>
     <message>

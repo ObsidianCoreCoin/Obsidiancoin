@@ -1025,7 +1025,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Obsidian Core</source>
+        <source>Obsidian Network</source>
         <translation>Craidd Obsidian</translation>
     </message>
     <message>

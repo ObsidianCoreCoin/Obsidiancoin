@@ -1917,7 +1917,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Obsidian Core</source>
+        <source>Obsidian Network</source>
         <translation>Obsidiani tuumik</translation>
     </message>
     <message>

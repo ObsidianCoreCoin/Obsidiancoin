@@ -1865,7 +1865,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Obsidian Core</source>
+        <source>Obsidian Network</source>
         <translation>Kerno de Obsidian</translation>
     </message>
     <message>

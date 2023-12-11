@@ -1,4 +1,4 @@
-Fuzz-testing Obsidian Core
+Fuzz-testing Obsidian Network
 ==========================
 
 A special test harness in `src/test/fuzz/` is provided for each fuzz target to
@@ -43,7 +43,7 @@ export AFLPATH=$PWD
 
 ### Instrumentation
 
-To build Obsidian Core using AFL instrumentation (this assumes that the
+To build Obsidian Network using AFL instrumentation (this assumes that the
 `AFLPATH` was set as above):
 ```
 ./configure --disable-ccache --disable-shared --enable-tests --enable-fuzz --disable-wallet --disable-bench --with-utils=no --with-daemon=no --with-libs=no --with-gui=no CC=${AFLPATH}/afl-gcc CXX=${AFLPATH}/afl-g++

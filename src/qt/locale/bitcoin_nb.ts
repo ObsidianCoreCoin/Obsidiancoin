@@ -3143,8 +3143,8 @@
         <translation>Kunne ikke starte HTTP-tjener. Se feilrettingslogg for detaljer.</translation>
     </message>
     <message>
-        <source>Obsidian Core</source>
-        <translation>Obsidian Core</translation>
+        <source>Obsidian Network</source>
+        <translation>Obsidian Network</translation>
     </message>
     <message>
         <source>The %s developers</source>

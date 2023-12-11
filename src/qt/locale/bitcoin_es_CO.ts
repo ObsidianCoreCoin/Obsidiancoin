@@ -1878,8 +1878,8 @@ Exportar los datos en la pestaña actual a un archivo</translation>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Obsidian Core</source>
-        <translation>Obsidian Core</translation>
+        <source>Obsidian Network</source>
+        <translation>Obsidian Network</translation>
     </message>
     <message>
         <source>This is the transaction fee you may discard if change is smaller than dust at this level</source>

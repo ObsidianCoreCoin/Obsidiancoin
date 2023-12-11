@@ -38,17 +38,17 @@ from the root of the repository.
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see [*Disable-wallet mode*](/doc/build-osx.md#disable-wallet-mode)).
 
-Build Obsidian Core
+Build Obsidian Network
 ------------------------
 
-1. Clone the Obsidian Core source code:
+1. Clone the Obsidian Network source code:
 
         git clone https://github.com/ObsidianCoreCoin/obsidiancoin
         cd obsidian
 
-2.  Build Obsidian Core:
+2.  Build Obsidian Network:
 
-    Configure and build the headless Obsidian Core binaries as well as the GUI (if Qt is found).
+    Configure and build the headless Obsidian Network binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -76,7 +76,7 @@ Build Obsidian Core
 
 Disable-wallet mode
 --------------------
-When the intention is to run only a P2P node without a wallet, Obsidian Core may be compiled in
+When the intention is to run only a P2P node without a wallet, Obsidian Network may be compiled in
 disable-wallet mode with:
 
     ./configure --disable-wallet
@@ -88,7 +88,7 @@ Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC 
 Running
 -------
 
-Obsidian Core is now available at `./src/obsidiand`
+Obsidian Network is now available at `./src/obsidiand`
 
 Before running, you may create an empty configuration file:
 
