@@ -90,6 +90,7 @@ public:
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 7 * 24 * 60 * 60;
         consensus.nPowTargetSpacing = 1.2 * 60;
+	consensus.lwmaAveragingWindow = 118;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 180;
