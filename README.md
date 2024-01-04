@@ -13,7 +13,7 @@ Specifications:
 - rpc port: 2332
 - halving: 840,000
 - block time: 72 seconds
-- diff time: 8,400 blocks
+- diff adj: ~1-118 blocks - LWMA
 - block reward: 100
 - pre-mine: 0
 - blocks: 28,560,000
