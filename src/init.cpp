@@ -1269,6 +1269,7 @@ bool AppInitMain(InitInterfaces& interfaces)
                                     "rpcpassword=password\n"
                                     "server=1\n"
                                     "listen=1\n"
+
                                     "daemon=1\n"
                                     "upnp=1\n"
                                     "port=2333\n"
@@ -1285,6 +1286,11 @@ bool AppInitMain(InitInterfaces& interfaces)
                                     "addnode=seed03.obsidiancoin.org\n"
                                     "addnode=seed04.obsidiancoin.org\n"
                                     "addnode=seed05.obsidiancoin.org\n"
+                                    "addnode=seed06.obsidiancoin.org\n"
+                                    "addnode=seed07.obsidiancoin.org\n"
+                                    "addnode=seed08.obsidiancoin.org\n"
+                                    "addnode=seed09.obsidiancoin.org\n"
+                                    "addnode=seed10.obsidiancoin.org\n"
                                     "\n";
             fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);

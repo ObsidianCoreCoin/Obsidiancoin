@@ -110,10 +110,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1700773000;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000005564e004882456e");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000eb302899c17fc49");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xa1061f96ca2cad4568ebaff4f526904ebd45520a9e0d6c0af061923fdb54b722");
+        consensus.defaultAssumeValid = uint256S("0x1c40941b689607071b06004a64179f54f58a3858f0c1edae3b03e9fc48f03269");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -141,7 +141,16 @@ public:
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
        
-        vSeeds.emplace_back("dnsseeds.obsidiancoin.org");
+        vSeeds.emplace_back("seed01.obsidiancoin.org");
+        vSeeds.emplace_back("seed02.obsidiancoin.org");
+        vSeeds.emplace_back("seed03.obsidiancoin.org");
+        vSeeds.emplace_back("seed04.obsidiancoin.org");
+        vSeeds.emplace_back("seed05.obsidiancoin.org");
+        vSeeds.emplace_back("seed06.obsidiancoin.org");
+        vSeeds.emplace_back("seed07.obsidiancoin.org");
+        vSeeds.emplace_back("seed08.obsidiancoin.org");
+        vSeeds.emplace_back("seed09.obsidiancoin.org");
+        vSeeds.emplace_back("seed10.obsidiancoin.org");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,35);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -179,15 +188,15 @@ public:
                 { 83892, uint256S("0x56346ec538145357f158a4ebf6aa73d0d254ddb81863f744c374c934ee52664f")},
                 { 118408, uint256S("0xbebc9d7669a3223d39cb6c149fb2ab0c0111b33cedf55af22d5daffbb350a9fc")},
                 { 143569, uint256S("0xa1061f96ca2cad4568ebaff4f526904ebd45520a9e0d6c0af061923fdb54b722")},         
-      
+                { 193428, uint256S("0x1c40941b689607071b06004a64179f54f58a3858f0c1edae3b03e9fc48f03269")},         
             }
         };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 143569
-            /* nTime    */ 1704284733,
-            /* nTxCount */ 160529,
-            /* dTxRate  */ 0.0422582076
+            /* nTime    */ 1707946835,
+            /* nTxCount */ 244559,
+            /* dTxRate  */ 0.032775221316
         };
 
         /* disable fallback fee on mainnet */
